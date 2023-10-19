@@ -19,9 +19,12 @@ const botonCambiarTurno = document.getElementById('cambiarTurno') as HTMLButtonE
 // Funciones
 const actualizarTurno = () => turnoActual.innerText = turno.toString().padStart(2, '0');
 
+// Función para el cambio de turno manual y no salga NaN cuando pulsan sin poner nada
 const cambiarTurno = () => {
-    turno = parseInt(turnoManual.value);
-    actualizarTurno();
+    if (turnoManual.value !== "") {
+        turno = parseInt(turnoManual.value);
+        actualizarTurno();
+    }
 };
 
 // Eventos
@@ -41,14 +44,8 @@ botonReset.addEventListener('click', () => {
     actualizarTurno();
 });
 
-// botonCambiarTurno.addEventListener('click',cambiarTurno);
 
-botonCambiarTurno.addEventListener('click',
-    function cambiarTurno() {
-        if (turnoManual.value !== '') {
-            cambiarTurno;
-        };
-    })
+botonCambiarTurno.addEventListener('click', cambiarTurno);
 
 
 // Evito que puedan meter números decimales o negativos
