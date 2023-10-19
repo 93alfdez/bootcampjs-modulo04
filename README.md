@@ -1,18 +1,18 @@
 # BootcampJS - Módulo 4
 
-A continuación explico la manera que he tenido de hacer que funcione este display de turnos.
+A continuación explico los pasos para que funcione este display de turnos.
 
 1. He declarado la variable __turno__ como ``let``, dándole el valor de 0.
 
-2. Después he creado los botones necesarios en HTML y a través de TS he capturado el ``id`` declarando las variable según lo que iba necesitando, como ejemplo:
+2. Después he creado los botones necesarios en HTML y he capturado el ``id`` declarando las variable según lo que iba necesitando, como ejemplo:
 
     ``const botonSiguiente = document.getElementById('turnoSiguiente') as HTMLButtonElement;``
 
-3. Una vez creadas las variables que necesitaba, he creado la función actualizar turno con la siguiente función:
+3. Una vez creadas las variables que necesitaba, he creado la función actualizar turno de la siguiente manera:
 
     ``const actualizarTurno = () => turnoActual.innerText = turno.toString().padStart(2, '0');``
 
-4. El paso siguiente ha sido asignar a cada variable un ``.addEventListener`` y darle funcionalidad. En el caso del ``botonAnterior`` he hecho una comparación para que no haya turnos negativos.
+4. El paso siguiente ha sido asignar a cada elemento HTML un ``.addEventListener`` y darle funcionalidad. En el caso del ``botonAnterior`` he hecho una comparación para que no haya turnos negativos.
 <br/>
 <br/>
 
